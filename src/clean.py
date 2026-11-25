@@ -19,7 +19,8 @@ df = df.drop(columns=["resolutioin_height", "resolutioin_width"])
 raw["index"] = raw["Unnamed: 0"] + 2
 df = df.merge(raw[["index", "graphic_card"]], on="index", how="left")
 g = df["graphic_card"].fillna("")
-df["gpu_vram_gb"] = g.str.extract(r"^(\d+)\s*GB")[0].astype(float).fillna(0)
+df["gpu_vram_gb"] = g.str.extract(
+    r"^(\d+)\s*GB\s+(?!SSD|HDD)")[0].astype(float).fillna(0)
 nv = g.str.extract(r"(RTX|GTX)\s*(\d{3,4})")
 df["gpu_num"] = pd.to_numeric(nv[1]).fillna(0)
 df["gpu_family"] = np.where(nv[0].notna(), nv[0],

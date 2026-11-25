@@ -1,0 +1,4 @@
+model,R2 (log price),MAE (₹),Median % error
+Ridge (baseline),0.897,15122.657,9.769
+Random Forest,0.903,13353.968,8.987
+XGBoost,0.922,12035.811,8.477
