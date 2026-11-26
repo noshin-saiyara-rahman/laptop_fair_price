@@ -1,0 +1,186 @@
+{
+  "target": "log_price (exp() gives Rs)",
+  "feature_order": [
+    "brand_name",
+    "processor_brand",
+    "iter",
+    "threads_num",
+    "core_num",
+    "ram_num",
+    "memory_type",
+    "memory_size",
+    "gpu_brand",
+    "gpu_type",
+    "os",
+    "display_size",
+    "Touch_Screen",
+    "warrenty",
+    "res_w",
+    "res_h",
+    "pixels_mp",
+    "gpu_vram_gb",
+    "gpu_num",
+    "gpu_family"
+  ],
+  "categorical": {
+    "brand_name": [
+      "Acer",
+      "Apple",
+      "Asus",
+      "Dell",
+      "HP",
+      "Lenovo",
+      "MSI",
+      "Other",
+      "Samsung"
+    ],
+    "processor_brand": [
+      "AMD",
+      "Apple",
+      "Intel",
+      "Other",
+      "Qualcomm"
+    ],
+    "iter": [
+      "Celeron",
+      "Core Ultra 5",
+      "Core Ultra 7",
+      "Core Ultra 9",
+      "Core i3",
+      "Core i5",
+      "Core i7",
+      "Core i9",
+      "Other",
+      "Ryzen 3",
+      "Ryzen 5",
+      "Ryzen 7",
+      "Snapdragon"
+    ],
+    "memory_type": [
+      "Hard Disk",
+      "SSD",
+      "eMMC Storage"
+    ],
+    "gpu_brand": [
+      "AMD",
+      "Apple",
+      "Intel",
+      "NVIDIA",
+      "Other",
+      "Qualcomm"
+    ],
+    "gpu_type": [
+      "Dedicated",
+      "Integrated"
+    ],
+    "os": [
+      "Chrome",
+      "Mac",
+      "Other",
+      "Windows 11"
+    ],
+    "gpu_family": [
+      "Integrated",
+      "Other dedicated",
+      "RTX"
+    ]
+  },
+  "numeric": {
+    "threads_num": {
+      "min": 2.0,
+      "max": 32.0,
+      "median": 12.0
+    },
+    "core_num": {
+      "min": 5.0,
+      "max": 24.0,
+      "median": 8.0
+    },
+    "ram_num": {
+      "min": 4.0,
+      "max": 96.0,
+      "median": 16.0
+    },
+    "memory_size": {
+      "min": 32.0,
+      "max": 4000.0,
+      "median": 512.0
+    },
+    "display_size": {
+      "min": 11.6,
+      "max": 18.0,
+      "median": 15.6
+    },
+    "Touch_Screen": {
+      "min": 0.0,
+      "max": 1.0,
+      "median": 0.0
+    },
+    "warrenty": {
+      "min": 1.0,
+      "max": 3.0,
+      "median": 1.0
+    },
+    "res_w": {
+      "min": 1280.0,
+      "max": 3840.0,
+      "median": 1920.0
+    },
+    "res_h": {
+      "min": 720.0,
+      "max": 2400.0,
+      "median": 1080.0
+    },
+    "pixels_mp": {
+      "min": 0.98352,
+      "max": 9.216,
+      "median": 2.0736
+    },
+    "gpu_vram_gb": {
+      "min": 0.0,
+      "max": 24.0,
+      "median": 0.0
+    },
+    "gpu_num": {
+      "min": 0.0,
+      "max": 5090.0,
+      "median": 0.0
+    }
+  },
+  "fair_price": {
+    "tier_edges": [
+      45853.7265625,
+      65986.984375,
+      104153.19921875
+    ],
+    "ratio_p10": [
+      0.8524759503395896,
+      0.8829007582948293,
+      0.8606062013655704,
+      0.7944374966614111
+    ],
+    "ratio_p90": [
+      1.1915879347263512,
+      1.1434566135434676,
+      1.2080675129870944,
+      1.2604608096852028
+    ]
+  },
+  "cv_results": {
+    "Ridge (baseline)": {
+      "R2 (log price)": 0.897,
+      "MAE (\u20b9)": 15122.657,
+      "Median % error": 9.769
+    },
+    "Random Forest": {
+      "R2 (log price)": 0.903,
+      "MAE (\u20b9)": 13353.968,
+      "Median % error": 8.987
+    },
+    "XGBoost": {
+      "R2 (log price)": 0.922,
+      "MAE (\u20b9)": 12035.811,
+      "Median % error": 8.477
+    }
+  }
+}
