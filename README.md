@@ -5,8 +5,7 @@ Built on 940 laptop listings from Smartprix (prices in ₹), with a Streamlit ap
 
 **Live demo:** _add your Streamlit link here after deploying_
 
-<!-- Add a screenshot or GIF of the app: save it as docs/app_screenshot.png and uncomment the line below -->
-<!-- ![App screenshot](docs/app_screenshot.png) -->
+![App screenshot](docs/app_screenshot.png)
 
 ## What it does
 

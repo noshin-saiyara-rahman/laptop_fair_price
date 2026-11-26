@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from predict import (GPU_KINDS, RESOLUTIONS, RTX_MODELS, build_features,  # noqa: E402
                      default_cpu_brand, fair_price_check, load_artifacts)
 
-st.set_page_config(page_title="Laptop Fair Price Check",
+st.set_page_config(page_title="Laptop Price Checker",
                    page_icon="💻", layout="wide")
 
 
@@ -28,9 +28,9 @@ def pick(options, preferred):
     return options.index(preferred) if preferred in options else 0
 
 
-st.title("💻 Laptop Fair Price Check")
-st.caption("Enter a laptop's specs and the asking price. The model estimates a market price "
-           "(Smartprix listings, ₹) and tells you whether the asking price looks fair.")
+st.title("💻 Laptop Price Checker")
+st.caption("Enter a laptop's specifications and the asking price. The model estimates a market price "
+           "(Smartprix listings, ₹INR) and tells you whether the asking price looks fair.")
 
 tab_check, tab_about = st.tabs(["Price check", "About the model"])
 
@@ -38,7 +38,7 @@ with tab_check:
     left, right = st.columns([1, 1])
 
     with left:
-        st.subheader("Specs")
+        st.subheader("Specifications")
         brand = st.selectbox("Brand", cats["brand_name"], index=pick(
             cats["brand_name"], "Lenovo"))
         cpu_series = st.selectbox(
@@ -104,10 +104,12 @@ with tab_check:
 
         k1, k2, k3 = st.columns(3)
         k1.metric("Model price", f"₹{res['predicted']:,}")
-        k2.metric("Fair range",
-                  f"₹{res['fair_low']:,} – ₹{res['fair_high']:,}")
+        k2.metric(
+            "Fair range", f"₹{res['fair_low'] / 1000:,.0f}k–{res['fair_high'] / 1000:,.0f}k")
         k3.metric("Asking price", f"₹{asking:,}", delta=f"{res['diff_pct']:+.0f}% vs model",
                   delta_color="inverse")
+        st.caption(
+            f"Exact fair range: ₹{res['fair_low'] / 1000:,.0f}k – ₹{res['fair_high'] / 1000:,.0f}k")
 
         if res["verdict"] == "fair":
             st.success(
