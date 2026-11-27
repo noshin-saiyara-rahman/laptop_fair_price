@@ -93,12 +93,28 @@ run `python src/clean.py`, then the notebooks in order:
 ## Project structure
 
 ```
-├── app/app.py              Streamlit app
-├── data/                   raw and cleaned data
-├── models/                 saved model and metadata
-├── notebooks/              EDA, modelling, explainability
-├── reports/figures/        charts used in this README
-├── src/clean.py            data cleaning
-├── src/predict.py          feature building and fair price check
+laptop_fair_price/
+├── app/
+│   └── app.py                      Streamlit app
+├── data/
+│   ├── raw/                        original Smartprix CSVs
+│   └── clean.csv                   cleaned data (output of src/clean.py)
+├── docs/
+│   └── app_screenshot.png          screenshot used in this README
+├── models/
+│   ├── laptop_price_model.joblib   saved XGBoost pipeline
+│   └── meta.json                   feature list, categories, fair-price margins
+├── notebooks/
+│   ├── 01_eda.ipynb                exploration
+│   ├── 02_models.ipynb             baseline vs XGBoost, error by price band
+│   └── 03_explain.ipynb            SHAP, fair price check, saves models/
+├── reports/
+│   ├── figures/                    charts used in this README
+│   └── model_results.csv           cross-validated results
+├── src/
+│   ├── clean.py                    data cleaning
+│   └── predict.py                  feature building and fair price check
+├── .gitignore
+├── README.md
 └── requirements.txt
 ```
