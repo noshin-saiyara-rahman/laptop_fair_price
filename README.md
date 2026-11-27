@@ -51,7 +51,7 @@ The ranges are calibrated on the same listings, so on genuinely new laptops fewe
 
 ## What drives price (SHAP)
 
-- Screen resolution ranks first, followed by CPU series, brand, GPU brand, storage and RAM.
+- Screen resolution (width, height and megapixels combined) ranks first by a wide margin, followed by CPU series, brand, GPU brand, storage and RAM.
 - Very small storage pulls the prediction down hard; the highest resolutions push it up by up to roughly 50%.
 - GPU features overlap (VRAM and GPU model number correlate at 0.92), so SHAP splits the credit between them.
 - Touchscreen laptops are 11% of the listings and have a much higher median price (₹127,990 vs ₹63,289). Treat this as a marker of higher-end models, not a causal effect.
