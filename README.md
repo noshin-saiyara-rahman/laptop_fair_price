@@ -3,7 +3,7 @@
 Predict a laptop's market price from its specs, then check whether an asking price looks fair.
 Built on 940 laptop listings from Smartprix (prices in ₹), with a Streamlit app on top.
 
-**Live demo:** _add your Streamlit link here after deploying_
+**Live demo:** https://laptopfairprice-checker.streamlit.app/
 
 ![App screenshot](docs/app_screenshot.png)
 
