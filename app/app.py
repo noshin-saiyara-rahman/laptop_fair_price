@@ -109,7 +109,7 @@ with tab_check:
         k3.metric("Asking price", f"₹{asking:,}", delta=f"{res['diff_pct']:+.0f}% vs model",
                   delta_color="inverse")
         st.caption(
-            f"Exact fair range: ₹{res['fair_low'] / 1000:,.0f}k – ₹{res['fair_high'] / 1000:,.0f}k")
+            f"Exact fair range: ₹{res['fair_low']:,} – ₹{res['fair_high']:,}")
 
         if res["verdict"] == "fair":
             st.success(
